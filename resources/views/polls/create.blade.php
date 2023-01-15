@@ -63,7 +63,7 @@
 
                         <div class="col s6">
                             <button
-                                x-on:click="optionsNumber > 2 ? optionsNumber-- : alert('poll must has at least 2 options')"
+                                x-on:click="optionsNumber > 2 ? optionsNumber-- : alert('poll must have at least 2 options')"
                                 class="waves-effect waves-light btn red darken-4" type="button">
                                 remove
                             </button>

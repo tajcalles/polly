@@ -22,7 +22,7 @@
                 <div class="input-field col s4">
                     <input required="required" type="text" class="datepicker" placeholder="start date" name="start_date">
                     <label for="title">start date</label>
-                    @error('start_at')
+                    @error('start_date')
                     {{$message}}
                     @enderror
                 </div>
@@ -38,7 +38,7 @@
                 <div class="input-field col s4">
                     <input required="required" type="text" class="timepicker" placeholder="end time" name="end_time">
                     <label for="title">end time</label>
-                    @error('end_at')
+                    @error('finish_date')
                     {{$message}}
                     @enderror
                 </div>

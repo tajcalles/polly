@@ -37,8 +37,8 @@
             </div>
 
             <div class="row col s12" x-data="{
-                optionsNumber:{{count($poll->pollOptions)}},
-                options: {{json_encode($poll->pollOptions)}},
+                optionsNumber:{{count($poll->options)}},
+                options: {{json_encode($poll->options)}},
                 removeOption(id) {
                     if (this.optionsNumber == 2) {
                         alert('each poll must has at least 2 options');
@@ -59,7 +59,7 @@
                 <template x-for="option,i in options">
                     <div class="row">
                         <div class="col s6">
-                            <input required="required" name="options[][option]" id="title" type="text" class="validate" :placeholder="`Option ` + (i + 1)" :value="option.option">
+                            <input required="required" name="options[][content]" id="title" type="text" class="validate" :placeholder="`Option ` + (i + 1)" :value="option.content">
                         </div>
 
                         <div class="col s6">

@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('polls', function (Blueprint $table) {
+        Schema::create('poll_results', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 60);
-            $table->longText('description')->nullable();
-            $table->foreignId('created_by')->constrained('users');
-            $table->dateTime('start_date');
-            $table->dateTime('finish_date');
+            $table->foreignId('poll_option_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('polls');
+        Schema::dropIfExists('poll_results');
     }
 };

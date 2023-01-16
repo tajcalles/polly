@@ -9,6 +9,7 @@ class Poll extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
     public function options()
     {
         return $this->hasMany(PollOption::class);

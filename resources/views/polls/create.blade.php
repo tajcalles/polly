@@ -58,7 +58,7 @@
                 <template x-for="i,index in optionsNumber">
                     <div class="row">
                         <div class="col s6">
-                            <input required="required" name="options[][content]" id="title" type="text" class="validate" :placeholder="`Option` + i">
+                            <input required="required" name="options[][option]" id="title" type="text" class="validate" :placeholder="`Option` + i">
                         </div>
 
                         <div class="col s6">

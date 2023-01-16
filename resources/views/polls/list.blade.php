@@ -22,7 +22,7 @@
         <tbody>
             @foreach($polls as $poll)
             <tr>
-                <td>{{$poll->title}}</td>
+                <td>{{$poll->name}}</td>
                 <td>{{$poll->status}}</td>
                 <td>
                     <a class="waves-effect waves-light btn info darken-2" href="{{route('poll.edit',[$poll])}}">

@@ -23,15 +23,18 @@ class PollController extends Controller
 
     public function index()
     {
-        $polls = auth()->user()->polls()->select('title','status','id')->paginate(10);
+        $polls = auth()->user()->polls()->select('name','status','id')->paginate(10);
 
         return view('polls.list', compact('polls'));
     }
 
     public function edit(Poll $poll)
     {
-        abort_if(auth()->user()->isNot($poll->user), 403);
+        // TODO: Conditionally render button in list.blade.php if poll has already started
+        // instead of returning a 403/404 on buttons
         abort_if($poll->status != PollStatus::PENDING->value, 404);
+        
+        abort_if(auth()->user()->isNot($poll->user), 403);
 
         $poll = $poll->load('options');
         return view('polls.update', compact('poll'));

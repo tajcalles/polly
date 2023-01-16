@@ -34,7 +34,7 @@
                     </a>
 
                     <a class="waves-effect waves-light btn green lighten-0" href="{{route('poll.show',[$poll])}}">
-                    show
+                    vote
                     </a>
                 </td>
               </tr>

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('poll_results', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('poll_option_id')->constrained();
+            $table->foreignId('option_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

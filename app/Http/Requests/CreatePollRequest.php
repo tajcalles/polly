@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 use Carbon\Carbon;
 
 class CreatePollRequest extends FormRequest
@@ -17,21 +18,21 @@ class CreatePollRequest extends FormRequest
         return true;
     }
 
-    public function prepareValidation()
+    public function prepareForValidation()
     {
         $this->merge([
-            'created_by' => auth()->id(),
-            'start_at' => Carbon::parse($this->start_date . $this->start_time)->toDateTimeString(),
-            'end_at' => Carbon::parse($this->end_date . $this->end_time)->toDateTimeString()
+            'start_date' => Carbon::parse($this->start_date . $this->start_time)->toDateTimeString(),
+            'finish_date' => Carbon::parse($this->end_date . $this->end_time)->toDateTimeString(),
         ]);
+
     }
 
     public function rules()
     {
         return [
             'title' => ['required', 'string'],
-            'start_at' => ['required', 'date', 'after_or_equal:now'],
-            'end_at' => ['required', 'date', 'after:start_at'],
+            'start_date' => ['required', 'date', 'after_or_equal:now'],
+            'finish_date' => ['required', 'date', 'after:start_at'],
             'options' => ['required', 'array', 'min:2']
         ];
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\PollStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,8 +19,9 @@ return new class extends Migration
             $table->string('name', 60);
             $table->longText('description')->nullable();
             $table->foreignId('created_by')->constrained('users');
-            $table->dateTime('start_date');
-            $table->dateTime('finish_date');
+            $table->dateTime('start_date'); // 2023-1-16 15:00
+            $table->dateTime('finish_date'); // 2023-1-16 15:00
+            $table->enum('status', array_column(PollStatus::cases(), 'value'));
             $table->timestamps();
         });
     }

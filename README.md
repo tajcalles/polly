@@ -4,13 +4,13 @@ App to create/edit/vote on polls. Coding challenge for Cardinal Financial using 
 
 # Getting Started
 
-Run php artisan db:seed for admin user, test users, and test polls to be generated.
+To start, pull repo and run "./vendor/bin/sail up" from the command line.
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Run ./vendor/bin/sail artisan db:seed for admin user, test users, and sample polls to be generated.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+To test admin features: 
+admin user email: cardinal_admin@mail.mail 
+password: password
+
+test user with polls created: test_user1@mail.mail
+password: password

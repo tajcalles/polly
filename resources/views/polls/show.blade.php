@@ -24,6 +24,7 @@
             </p>
             @endforeach
 
+            <!-- TODO: User can only vote once -->
             <button class="waves-effect waves-light btn info darken-2" type="submit">
                 vote
             </button>

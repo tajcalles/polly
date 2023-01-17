@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::prefix('poll')->middleware('auth')->group(function(){
+Route::prefix('/')->middleware('auth')->group(function(){
     Route::view('create', 'polls.create')->name('poll.create');
     Route::post('create', [PollController::class, 'store'])->name('poll.store');
     Route::get('/', [PollController::class,'index'])->name('poll.index');
